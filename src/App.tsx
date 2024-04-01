@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 function App() {
   const x = scaleLinear([0, 20], ["0px", "-25px"]);
-  const y = scaleLinear([0, 20], ["0px", "2px"]);
+  const y = scaleLinear([0, 20], ["0px", "-10px"]);
   const shadow = Array.from(
     { length: 21 },
     (_, i) => `${x(i)} ${y(i)} var(--color-hot-pink-200)`,
