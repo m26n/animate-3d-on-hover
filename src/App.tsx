@@ -18,28 +18,34 @@ function App() {
           ease: "easeOut",
         }}
         style={{
-          perspective: "800px",
+          perspective: "1000px",
           perspectiveOrigin: "50% 50%",
           backgroundColor: "var(--color-hot-pink-500)",
         }}
         whileHover={{
-          perspective: "1400px",
-          perspectiveOrigin: "80% 50%",
+          perspective: "1100px",
+          perspectiveOrigin: "-80% 50%",
           backgroundColor: "var(--color-hot-pink-600)",
-          scale: 1.1,
+          // scale: 1.1,
         }}
         className="relative size-80"
       >
-        <h1
+        <motion.h1
           style={{
             textShadow: shadow,
-            transform:
-              "rotateX(15deg) rotateY(51deg) rotateZ(348deg) translateX(30%) translateY(-5%)",
+            transform: "rotateX(0deg) rotateY(22deg) rotateZ(354deg)",
+            letterSpacing: "var(--letter-spacing-normal)"
+            // transform:
+            //   "rotateX(15deg) rotateY(51deg) rotateZ(348deg) translateX(30%) translateY(-5%)",
+          }}
+          whileHover={{
+            transform: "rotateX(0deg) rotateY(0deg) rotateZ(360deg)",
+            letterSpacing: "var(--letter-spacing-wide)"
           }}
           className="text-hot-pink-50 absolute inset-0 inline-flex h-full w-full items-center justify-center text-[20rem] font-black tracking-wide"
         >
           SPIN
-        </h1>
+        </motion.h1>
       </motion.div>
     </div>
   );
