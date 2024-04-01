@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-3xl: 1700px;
+  --default-transition-duration: 800ms;
+  --drop-shadow-lg: 0px 10px 10px rgb(0 0 0 / 0.5);
+  --color-hot-pink-50: #fff3ed;
+  --color-hot-pink-100: #ffe3d4;
+  --color-hot-pink-200: #ffc4a9;
+  --color-hot-pink-300: #ffa07a;
+  --color-hot-pink-400: #fe6639;
+  --color-hot-pink-500: #fc3e13;
+  --color-hot-pink-600: #ed2409;
+  --color-hot-pink-700: #c51609;
+  --color-hot-pink-800: #9c1310;
+  --color-hot-pink-900: #7e1310;
+  --color-hot-pink-950: #440606;
+}
