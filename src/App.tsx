@@ -5,7 +5,8 @@ function App() {
   const x = scaleLinear([0, 20], ["0px", "-25px"]);
   const y = scaleLinear([0, 20], ["0px", "-10px"]);
   const shadowColor = "var(--color-hot-pink-400)";
-  const formatShadows = (_: unknown, i: number) => `${x(i)} ${y(i)} ${shadowColor}`;
+  const formatShadows = (_: unknown, i: number) =>
+    `${x(i)} ${y(i)} ${shadowColor}`;
   const shadow = Array.from({ length: 21 }, formatShadows).join(", ");
 
   const textVariants = {
