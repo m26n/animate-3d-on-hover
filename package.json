@@ -18,8 +18,8 @@
   },
   "lint-staged": {
     "*": [
-      "pnpm run lint:fix",
-      "pnpm run format"
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
     ]
   },
   "dependencies": {
