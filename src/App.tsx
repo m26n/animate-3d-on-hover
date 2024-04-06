@@ -7,50 +7,59 @@ function App() {
     ["0px", "-25px"],
   );
   const y = scaleLinear([0, 20], ["0px", "-10px"]);
-  const shadow = Array.from(
-    {
-      length: 21,
+  const shadowColor = "var(--color-hot-pink-400)";
+  const formatShadows = (_: unknown, i: number) =>
+    `${x(i)} ${y(i)} ${shadowColor}`;
+  const shadow = Array.from({ length: 21 }, formatShadows).join(", ");
+
+  const textVariants = {
+    initial: {
+      transform: "rotateX(0deg) rotateY(22deg) rotateZ(354deg)",
+      letterSpacing: "var(--letter-spacing-normal)",
     },
-    (_, i) => `${x(i)} ${y(i)} var(--color-hot-pink-200)`,
-  ).join(", ");
+    animate: {
+      transform: "rotateX(0deg) rotateY(0deg) rotateZ(360deg)",
+      letterSpacing: "var(--letter-spacing-wide)",
+    },
+  };
+
+  const boxVariants = {
+    initial: {
+      perspective: "1000px",
+      perspectiveOrigin: "50% 50%",
+      backgroundColor: "var(--color-hot-pink-500)",
+    },
+    animate: {
+      perspective: "1100px",
+      perspectiveOrigin: "-80% 50%",
+      backgroundColor: "var(--color-hot-pink-600)",
+    },
+  };
 
   return (
     <div className="bg-hot-pink-400 flex h-lvh w-full items-center justify-center">
-      {/* 3xl:hidden drop-shadow-lg */}
       <motion.div
-        transition={{
-          duration: 0.3,
-          ease: "easeOut",
-        }}
-        style={{
-          perspective: "1000px",
-          perspectiveOrigin: "50% 50%",
-          backgroundColor: "var(--color-hot-pink-500)",
-        }}
-        whileHover={{
-          perspective: "1100px",
-          perspectiveOrigin: "-80% 50%",
-          backgroundColor: "var(--color-hot-pink-600)",
-          // scale: 1.1,
-        }}
-        className="relative size-80"
+        whileHover="animate"
+        initial="initial"
+        className="relative grid h-[20rem] w-[49rem] overflow-clip"
       >
-        <motion.h1
+        <motion.div
+          transition={{
+            duration: 0.3,
+            ease: "easeOut",
+          }}
+          variants={boxVariants}
+          className="absolute inset-0 size-80 place-self-center"
+        />
+        <motion.span
           style={{
             textShadow: shadow,
-            transform: "rotateX(0deg) rotateY(22deg) rotateZ(354deg)",
-            letterSpacing: "var(--letter-spacing-normal)",
-            // transform:
-            //   "rotateX(15deg) rotateY(51deg) rotateZ(348deg) translateX(30%) translateY(-5%)",
           }}
-          whileHover={{
-            transform: "rotateX(0deg) rotateY(0deg) rotateZ(360deg)",
-            letterSpacing: "var(--letter-spacing-wide)",
-          }}
-          className="text-hot-pink-50 absolute inset-0 inline-flex h-full w-full items-center justify-center text-[20rem] font-black tracking-wide"
+          variants={textVariants}
+          className="text-hot-pink-50 absolute place-self-center text-[20rem] font-black tracking-wide drop-shadow-2xl"
         >
           SPIN
-        </motion.h1>
+        </motion.span>
       </motion.div>
     </div>
   );
