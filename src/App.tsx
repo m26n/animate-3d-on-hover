@@ -1,15 +1,11 @@
-import { scaleLinear, type ScaleLinear } from "d3";
+import { scaleLinear } from "d3";
 import { motion } from "framer-motion";
 
 function App() {
-  const x: ScaleLinear<string, string, never> = scaleLinear(
-    [0, 20],
-    ["0px", "-25px"],
-  );
+  const x = scaleLinear([0, 20], ["0px", "-25px"]);
   const y = scaleLinear([0, 20], ["0px", "-10px"]);
   const shadowColor = "var(--color-hot-pink-400)";
-  const formatShadows = (_: unknown, i: number) =>
-    `${x(i)} ${y(i)} ${shadowColor}`;
+  const formatShadows = (_: unknown, i: number) => `${x(i)} ${y(i)} ${shadowColor}`;
   const shadow = Array.from({ length: 21 }, formatShadows).join(", ");
 
   const textVariants = {
@@ -44,17 +40,12 @@ function App() {
         className="relative grid h-[20rem] w-[49rem] overflow-clip"
       >
         <motion.div
-          transition={{
-            duration: 0.3,
-            ease: "easeOut",
-          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           variants={boxVariants}
           className="absolute inset-0 size-80 place-self-center"
         />
         <motion.span
-          style={{
-            textShadow: shadow,
-          }}
+          style={{ textShadow: shadow }}
           variants={textVariants}
           className="text-hot-pink-50 absolute place-self-center text-[20rem] font-black tracking-wide drop-shadow-2xl"
         >
