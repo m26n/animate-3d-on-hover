@@ -1,18 +1,21 @@
-/**
- * @type {import('prettier').Config & import("@ianvs/prettier-plugin-sort-imports").PluginConfig}
- */
+import type { Options } from "prettier";
+import type { PluginConfig } from "@ianvs/prettier-plugin-sort-imports";
+
 const config = {
+  overrides: [
+    {
+      editorconfig: true,
+    },
+  ],
   arrowParens: "always",
-  printWidth: 80,
   singleQuote: false,
   jsxSingleQuote: false,
   semi: true,
   trailingComma: "all",
-  tabWidth: 2,
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
   ],
-};
+} satisfies Options & PluginConfig;
 
 export default config;
