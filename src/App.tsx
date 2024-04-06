@@ -8,7 +8,9 @@ function App() {
   );
   const y = scaleLinear([0, 20], ["0px", "-10px"]);
   const shadow = Array.from(
-    { length: 21 },
+    {
+      length: 21,
+    },
     (_, i) => `${x(i)} ${y(i)} var(--color-hot-pink-200)`,
   ).join(", ");
 
