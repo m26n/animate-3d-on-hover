@@ -17,9 +17,9 @@
     "npm": "10"
   },
   "lint-staged": {
-    "*": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
+    "**/*.{js,ts,mjs,cjs,jsx,tsx,css,html,json}": [
+      "eslint --fix --no-error-on-unmatched-pattern",
+      "prettier --write --ignore-unknown --no-error-on-unmatched-pattern"
     ]
   },
   "dependencies": {
