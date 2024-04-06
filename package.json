@@ -16,6 +16,11 @@
     "node": "18",
     "npm": "10"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*": [
       "pnpm run lint:fix",
