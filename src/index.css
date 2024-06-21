@@ -16,3 +16,19 @@
   --color-hot-pink-900: #7e1310;
   --color-hot-pink-950: #440606;
 }
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.tranform-style-flat {
+  transform-style: flat;
+}
+
+.transform-style-inherit {
+  transform-style: inherit;
+}
+
+.transform-style-unset {
+  transform-style: unset;
+}

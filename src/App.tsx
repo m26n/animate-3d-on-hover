@@ -23,12 +23,10 @@ function App() {
 
   const boxVariants = {
     initial: {
-      perspective: "1000px",
       perspectiveOrigin: "50% 50%",
       backgroundColor: "var(--color-hot-pink-500)",
     },
     animate: {
-      perspective: "1100px",
       perspectiveOrigin: "-80% 50%",
       backgroundColor: "var(--color-hot-pink-600)",
     },
@@ -39,7 +37,7 @@ function App() {
       <motion.div
         whileHover="animate"
         initial="initial"
-        className="relative grid h-[20rem] w-[49rem] overflow-clip"
+        className="transform-style-3d relative grid h-[28rem] w-[60rem] overflow-clip perspective-midrange"
       >
         <motion.div
           transition={{ duration: 0.3, ease: "easeOut" }}
